@@ -24,6 +24,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-radvd \
 	gluon-ssid-changer \
 	gluon-status-page \
+	gluon-radv-filterd \
 	respondd-module-airtime \
 	ffffm-ath9k-broken-wifi-workaround \
 	iwinfo \
