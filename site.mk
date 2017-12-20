@@ -13,7 +13,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-segment-mld \
-	gluon-ebtables-source-filter \
 	gluon-authorized-keys \
 	gluon-web-admin \
 	gluon-web-autoupdater \
