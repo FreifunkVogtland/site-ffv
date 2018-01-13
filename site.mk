@@ -11,6 +11,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-mesh-vpn \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
+	gluon-ebtables-limit-arp \
 	gluon-ebtables-segment-mld \
 	gluon-authorized-keys \
 	gluon-web-admin \
