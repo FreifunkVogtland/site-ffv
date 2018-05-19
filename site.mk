@@ -1,6 +1,5 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
-	gluon-alfred \
 	gluon-respondd \
 	gluon-autoupdater \
 	gluon-setup-mode \
@@ -12,6 +11,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-mesh-vpn \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
+	gluon-ebtables-limit-arp \
 	gluon-ebtables-segment-mld \
 	gluon-authorized-keys \
 	gluon-web-admin \
