@@ -12,7 +12,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
     SITE_TAG=b20180603-l2tp
-    TARGET_BRANCH=experimental
+    TARGET_BRANCH="experimental_l2tp"
     GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
     
     # set gluon env variables
