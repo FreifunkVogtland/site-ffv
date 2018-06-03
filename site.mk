@@ -26,6 +26,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-radv-filterd \
 	respondd-module-airtime \
 	ffffm-ath9k-broken-wifi-workaround \
+	ffho-autoupdater-wifi-fallback \
 	iwinfo \
 	iptables \
 	haveged
