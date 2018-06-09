@@ -52,7 +52,7 @@ GLUON_SITE_PACKAGES += \
     kmod-usb-hid
 endif
 
-DEFAULT_GLUON_RELEASE := b$(shell date '+%Y%m%d')-v
+DEFAULT_GLUON_RELEASE := b$(shell date '+%Y%m%d')-exp
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 
