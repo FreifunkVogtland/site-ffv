@@ -11,8 +11,8 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     GLUON_VERSION="2017.1.7-3"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
-    SITE_TAG=b20180613-exp
-    TARGET_BRANCH=experimental
+    SITE_TAG=b20180613
+    TARGET_BRANCH=stable
     GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
     
     # set gluon env variables
@@ -29,14 +29,6 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
         x86-generic \
         x86-geode \
         x86-64 \
-        \
-        ar71xx-mikrotik \
-        ipq806x \
-        mvebu \
-        ramips-mt7621 \
-        ramips-mt7628 \
-        ramips-rt305x \
-        sunxi \
     "
     
     # build
@@ -44,10 +36,10 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     git clone https://github.com/FreifunkVogtland/site-ffv.git "${GLUONDIR}"/site -b "${SITE_TAG}"
     make -C "${GLUONDIR}" update
     for target in ${TARGETS}; do
-        make -C "${GLUONDIR}" GLUON_TARGET="${target}" BROKEN=1 GLUON_BRANCH="${TARGET_BRANCH}" -j"$(nproc || echo 1)"
+        make -C "${GLUONDIR}" GLUON_TARGET="${target}" GLUON_BRANCH="${TARGET_BRANCH}" -j"$(nproc || echo 1)"
     done
     
-    make -C "${GLUONDIR}" GLUON_BRANCH="${TARGET_BRANCH}" BROKEN=1 manifest
+    make -C "${GLUONDIR}" GLUON_BRANCH="${TARGET_BRANCH}" manifest
     "${GLUONDIR}"/contrib/sign.sh "${SIGN_KEYDIR}/${MANIFEST_KEY}" "${GLUONDIR}"/output/images/sysupgrade/"${TARGET_BRANCH}".manifest
 
 ## building single images
