@@ -12,7 +12,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-ebtables-limit-arp \
-	gluon-ebtables-segment-mld \
 	gluon-authorized-keys \
 	gluon-web-admin \
 	gluon-web-autoupdater \
