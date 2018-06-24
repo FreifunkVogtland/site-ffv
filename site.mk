@@ -2,6 +2,7 @@ GLUON_FEATURES := \
 	authorized-keys \
 	autoupdater \
 	config-mode-core \
+	config-mode-domain-select \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
 	ebtables-limit-arp \
@@ -54,3 +55,4 @@ GLUON_PRIORITY ?= 7
 GLUON_LANGS ?= de
 GLUON_REGION = eu
 GLUON_ATH10K_MESH = 11s
+GLUON_MULTIDOMAIN = 1
