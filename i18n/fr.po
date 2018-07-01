@@ -67,3 +67,6 @@ msgstr "Ex : E-mail ou numéro de téléphone"
 # package/gluon-config-mode-hostname/i18n/
 msgid "gluon-config-mode:hostname-help"
 msgstr ""
+
+msgid "gluon-config-mode:geo-location-help"
+msgstr ""
