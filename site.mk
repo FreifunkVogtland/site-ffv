@@ -1,54 +1,42 @@
+GLUON_FEATURES := \
+	authorized-keys \
+	autoupdater \
+	config-mode-core \
+	config-mode-domain-select \
+	ebtables-filter-multicast \
+	ebtables-filter-ra-dhcp \
+	ebtables-limit-arp \
+	mesh-batman-adv-15 \
+	mesh-vpn-tunneldigger \
+	radvd \
+	radv-filterd \
+	respondd \
+	setup-mode \
+	ssid-changer \
+	status-page \
+	web-advanced \
+	web-private-wifi \
+	web-wizard
+
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-15 \
-	gluon-respondd \
-	gluon-autoupdater \
-	gluon-setup-mode \
-	gluon-config-mode-core \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-ebtables-limit-arp \
-	gluon-ebtables-segment-mld \
-	gluon-authorized-keys \
-	gluon-web-admin \
-	gluon-web-autoupdater \
-	gluon-web-network \
-	gluon-web-private-wifi \
-	gluon-web-wifi-config \
-	gluon-mesh-vpn-tunneldigger \
-	gluon-radvd \
-	gluon-ssid-changer \
-	gluon-status-page \
-	gluon-radv-filterd \
-	respondd-module-airtime \
 	ffffm-ath9k-broken-wifi-workaround \
 	ffho-autoupdater-wifi-fallback \
+	haveged \
 	iwinfo \
-	iptables \
-	haveged
+	respondd-module-airtime
 
 ifeq ($(GLUON_TARGET),x86-generic)
 GLUON_SITE_PACKAGES += \
-    kmod-usb-core \
-    kmod-usb2 \
     kmod-usb-hid
 endif
 
 ifeq ($(GLUON_TARGET),x86-64)
 GLUON_SITE_PACKAGES += \
-    kmod-usb-core \
-    kmod-usb2 \
     kmod-usb-hid
 endif
 
 ifeq ($(GLUON_TARGET),x86-geode)
 GLUON_SITE_PACKAGES += \
-    kmod-usb-core \
-    kmod-usb2 \
     kmod-usb-hid
 endif
 
@@ -61,3 +49,4 @@ GLUON_PRIORITY ?= 7
 GLUON_LANGS ?= de
 GLUON_REGION = eu
 GLUON_ATH10K_MESH = 11s
+GLUON_MULTIDOMAIN = 1
