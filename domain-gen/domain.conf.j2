@@ -1,0 +1,112 @@
+{
+	domain_names = {
+		{{ domain_code }} = '{{ name }}'
+	},
+
+	-- Prefixes used within the mesh. Both are required.
+	prefix4 = '{{ prefix4 }}',
+	prefix6 = '{{ prefix6_64 }}::/64',
+
+	-- The next node feature allows clients to always reach the node it is
+	-- connected to using a known IP address.
+	next_node = {
+		name = { 'nextnode.ffv', 'nextnode' },
+		-- anycast IPs of all nodes
+		ip4 = '{{ ip4 }}',
+		ip6 = '{{ prefix6_64 }}::1:1',
+	},
+
+	domain_seed = '{{ domain_seed }}',
+
+	-- Wireless configuration for 2.4 GHz interfaces.
+	wifi24 = {
+		channel = 11,
+		ap = {
+			ssid = '{{ ssid }}',
+		},
+{%- if domain_code == 'ffv' %}
+		ibss = {
+			ssid = 'peer.vogtland.freifunk.net',
+			bssid = '02:ff:c0:aa:00:00',
+			mcast_rate = 12000,
+		},
+{%- else %}
+		mesh = {
+			id = 'sjGGQhEmPz8HqC2u2dyi-{{ domain_code }}',
+			mcast_rate = 12000,
+		},
+{%- endif %}
+	},
+
+	-- Wireless configuration for 5 GHz interfaces.
+	wifi5 = {
+		channel = 36,
+		htmode = 'HT40+',
+		ap = {
+			ssid = '{{ ssid }}',
+		},
+		mesh = {
+{%- if domain_code == 'ffv' %}
+			id = 'peer.vogtland.freifunk.net',
+{%- else %}
+			id = 'sjGGQhEmPz8HqC2u2dyi-{{ domain_code }}',
+{%- endif %}
+			mcast_rate = 12000,
+		},
+	},
+
+	mesh = {
+{%- if domain_code == 'ffv' %}
+		vxlan = false,
+{%- else %}
+		vxlan = true,
+{%- endif %}
+	},
+
+	mesh_vpn = {
+		tunneldigger = {
+			brokers = {
+				'vpn01.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn02.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn03.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn04.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn05.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn06.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn07.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn08.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn09.freifunk-vogtland.net:{{ 11000 + id }}',
+				'vpn10.freifunk-vogtland.net:{{ 11000 + id }}',
+			},
+		},
+	},
+
+	autoupdater = {
+		branches = {
+			stable = {
+				-- List of mirrors to fetch images from. IPv6 required!
+				mirrors = {
+					'http://firmware.freifunk-vogtland.net/firmware-{{ domain_code }}/stable/sysupgrade',
+					'http://[2003:49:a051:9000::42]/firmware-{{ domain_code }}/stable/sysupgrade', -- firmware.freifunk-vogtland.net
+					'http://[2a01:4f8:10a:2f8f::2]/firmware-{{ domain_code }}/stable/sysupgrade', -- vpn04.freifunk-vogtland.net
+				},
+			},
+			experimental = {
+				-- List of mirrors to fetch images from. IPv6 required!
+				mirrors = {
+					'http://firmware.freifunk-vogtland.net/firmware-{{ domain_code }}/experimental/sysupgrade',
+					'http://[2003:49:a051:9000::42]/firmware-{{ domain_code }}/experimental/sysupgrade', -- firmware.freifunk-vogtland.net
+					'http://[2a01:4f8:10a:2f8f::2]/firmware-{{ domain_code }}/experimental/sysupgrade', -- vpn04.freifunk-vogtland.net
+				},
+			},
+			experimental_l2tp = {
+				-- List of mirrors to fetch images from. IPv6 required!
+				mirrors = {
+					'http://firmware.freifunk-vogtland.net/firmware-{{ domain_code }}/experimental_l2tp/sysupgrade',
+					'http://[2003:49:a051:9000::42]/firmware-{{ domain_code }}/experimental_l2tp/sysupgrade', -- firmware.freifunk-vogtland.net
+					'http://[2a01:4f8:10a:2f8f::2]/firmware-{{ domain_code }}/experimental_l2tp/sysupgrade', -- vpn04.freifunk-vogtland.net
+				},
+			},
+		},
+	},
+}
+
