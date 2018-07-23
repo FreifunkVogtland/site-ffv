@@ -24,18 +24,10 @@
 		ap = {
 			ssid = '{{ ssid }}',
 		},
-{%- if domain_code == 'ffv' %}
-		ibss = {
-			ssid = 'peer.vogtland.freifunk.net',
-			bssid = '02:ff:c0:aa:00:00',
-			mcast_rate = 12000,
-		},
-{%- else %}
 		mesh = {
 			id = 'sjGGQhEmPz8HqC2u2dyi-{{ domain_code }}',
 			mcast_rate = 12000,
 		},
-{%- endif %}
 	},
 
 	-- Wireless configuration for 5 GHz interfaces.
@@ -46,21 +38,13 @@
 			ssid = '{{ ssid }}',
 		},
 		mesh = {
-{%- if domain_code == 'ffv' %}
-			id = 'peer.vogtland.freifunk.net',
-{%- else %}
 			id = 'sjGGQhEmPz8HqC2u2dyi-{{ domain_code }}',
-{%- endif %}
 			mcast_rate = 12000,
 		},
 	},
 
 	mesh = {
-{%- if domain_code == 'ffv' %}
-		vxlan = false,
-{%- else %}
 		vxlan = true,
-{%- endif %}
 	},
 
 	mesh_vpn = {

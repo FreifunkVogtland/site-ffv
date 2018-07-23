@@ -11,7 +11,7 @@ domains = {
        'domain_seed': 'cb2a9ab64c565c48685b3b0ded5df2f095643bc3a020c2c55e2baac85cf62c0c',
        'ip4': '10.204.0.1',
        'prefix4': '10.204.0.0/19',
-       'prefix6_64': '2a03:2260:200f:1337',
+       'prefix6_64': 'fd01:fd59:0000:0000',
     },
    'ffv_a': {
        'id': 1,
