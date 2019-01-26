@@ -3,6 +3,7 @@ GLUON_FEATURES := \
 	autoupdater \
 	config-mode-core \
 	config-mode-domain-select \
+	config-mode-geo-location-osm \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
 	mesh-batman-adv-15 \
