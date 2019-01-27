@@ -25,7 +25,6 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
         ar71xx-nand \
         brcm2708-bcm2708 \
         brcm2708-bcm2709 \
-        ipq806x \
         mpc85xx-generic \
         ramips-mt7620 \
         ramips-mt7621 \
