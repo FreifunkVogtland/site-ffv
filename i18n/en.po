@@ -22,7 +22,7 @@ msgid "gluon-config-mode:domain-select"
 msgstr ""
 "Here you have the possibility of selecting the mesh domain in which your node "
 "is placed. Please keep in mind that your router only connects with the nodes "
-"of the selected domain"
+"of the selected domain."
 
 msgid "gluon-config-mode:pubkey"
 msgstr ""
@@ -40,17 +40,9 @@ msgstr ""
 "information about the Freifunk community on Freifunk Vogtland, have a look at "
 "<a href=\"https://vogtland.freifunk.net/\">our homepage</a>.</p>"
 "<p>To get back to this configuration interface, press the reset button for "
-"3 seconds during normal operation. The device will then reboot into config "
+"about 10 seconds during normal operation. The device will then reboot into config "
 "mode.</p>"
 "<p>Have fun with your node and exploring of the Freifunk network!</p>"
-
-msgid "gluon-config-mode:altitude-label"
-msgstr "Altitude"
-
-msgid "gluon-config-mode:altitude-help"
-msgstr ""
-"Specifying the altitude is optional and should only be done if a proper "
-"value is known."
 
 # Leave empty to use the default text, which can be found in:
 # package/gluon-config-mode-hostname/i18n/
@@ -60,6 +52,9 @@ msgstr ""
 # Leave empty to use the default text, which can be found in:
 # package/gluon-config-mode-geo-location/i18n/
 msgid "gluon-config-mode:geo-location-help"
+msgstr ""
+
+msgid "gluon-config-mode:altitude-label"
 msgstr ""
 
 # Leave empty to use the default text, which can be found in:

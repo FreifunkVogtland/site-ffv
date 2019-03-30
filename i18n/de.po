@@ -43,17 +43,9 @@ msgstr ""
 "Freifunk Vogtland-Community findest du auf "
 "<a href=\"https://vogtland.freifunk.net/\">unserer Webseite</a>.</p>"
 "<p>Um zu dieser Konfigurationsseite zurückzugelangen, drücke im normalen "
-"Betrieb für drei Sekunden den Reset-Button. Das Gerät wird dann im Config "
+"Betrieb für ca. 10 Sekunden den Reset-Button. Das Gerät wird dann im Config "
 "Mode neustarten.</p>"
 "<p>Viel Spaß mit deinem Knoten und der Erkundung von Freifunk!</p>"
-
-msgid "gluon-config-mode:altitude-label"
-msgstr "Höhe"
-
-msgid "gluon-config-mode:altitude-help"
-msgstr ""
-"Die Höhenangabe ist optional und sollte nur gesetzt werden, wenn ein "
-"exakter Wert bekannt ist."
 
 # Leave empty to use the default text, which can be found in:
 # package/gluon-config-mode-hostname/i18n/
@@ -65,9 +57,7 @@ msgstr ""
 msgid "gluon-config-mode:geo-location-help"
 msgstr ""
 
-# Leave empty to use the default text, which can be found in:
-# package/gluon-config-mode-geo-location/i18n/
-msgid "gluon-config-mode:geo-location-help"
+msgid "gluon-config-mode:altitude-label"
 msgstr ""
 
 # Leave empty to use the default text, which can be found in:
