@@ -8,7 +8,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
 ## building images from releases
 
     # configure build specific settings
-    GLUON_VERSION="2018.2.1-1"
+    GLUON_VERSION="2018.2.1-2"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
     SITE_TAG=b20190316-exp
