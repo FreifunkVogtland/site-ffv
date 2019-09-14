@@ -19,38 +19,17 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     export GLUON_OPKG_KEY="${SIGN_KEYDIR}/gluon-opkg-key"
     export GLUON_RELEASE="${SITE_TAG}"
     
-    TARGETS="\
-        ar71xx-generic \
-        ar71xx-tiny \
-        ar71xx-nand \
-        brcm2708-bcm2708 \
-        brcm2708-bcm2709 \
-        ipq40xx \
-        mpc85xx-generic \
-        ramips-mt7620 \
-        ramips-mt7621 \
-        ramips-mt76x8 \
-        ramips-rt305x \
-        sunxi-cortexa7 \
-        x86-generic \
-        x86-geode \
-        x86-64 \
-        \
-        ar71xx-mikrotik \
-        brcm2708-bcm2710 \
-        ipq806x \
-        mvebu-cortexa9 \
-    "
+    MAKEFLAGS="BROKEN=1"
     
     # build
     git clone https://github.com/FreifunkVogtland/gluon.git "${GLUONDIR}" -b v"${GLUON_VERSION}"
     git clone https://github.com/FreifunkVogtland/site-ffv.git "${GLUONDIR}"/site -b "${SITE_TAG}"
-    make -C "${GLUONDIR}" update
-    for target in ${TARGETS}; do
-        make -C "${GLUONDIR}" GLUON_TARGET="${target}" BROKEN=1 GLUON_BRANCH="${TARGET_BRANCH}" -j"$(nproc || echo 1)"
+    make -C "${GLUONDIR}" $MAKEFLAGS update
+    for target in $(make -s -C "${GLUONDIR}" $MAKEFLAGS list-targets); do
+        make -C "${GLUONDIR}" GLUON_TARGET="${target}" $MAKEFLAGS GLUON_BRANCH="${TARGET_BRANCH}" -j"$(nproc || echo 1)"
     done
     
-    make -C "${GLUONDIR}" GLUON_BRANCH="${TARGET_BRANCH}" BROKEN=1 manifest
+    make -C "${GLUONDIR}" GLUON_BRANCH="${TARGET_BRANCH}" $MAKEFLAGS manifest
     "${GLUONDIR}"/contrib/sign.sh "${SIGN_KEYDIR}/${MANIFEST_KEY}" "${GLUONDIR}"/output/images/sysupgrade/"${TARGET_BRANCH}".manifest
 
 ## building single images
