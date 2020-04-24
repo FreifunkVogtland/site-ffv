@@ -20,7 +20,6 @@ GLUON_FEATURES := \
 GLUON_SITE_PACKAGES := \
 	ffffm-ath9k-broken-wifi-workaround \
 	ffho-autoupdater-wifi-fallback \
-	haveged \
 	iwinfo \
 	respondd-module-airtime
 
