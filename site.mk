@@ -20,9 +20,9 @@ GLUON_FEATURES := \
 GLUON_SITE_PACKAGES := \
 	ffffm-ath9k-broken-wifi-workaround \
 	ffho-autoupdater-wifi-fallback \
-	haveged \
 	iwinfo \
-	respondd-module-airtime
+	respondd-module-airtime \
+	urngd
 
 ifeq ($(GLUON_TARGET),x86-generic)
 GLUON_SITE_PACKAGES += \
@@ -47,6 +47,5 @@ GLUON_PRIORITY ?= 7
 
 GLUON_LANGS ?= de
 GLUON_REGION = eu
-GLUON_WLAN_MESH = 11s
 GLUON_MULTIDOMAIN = 1
 GLUON_DEPRECATED = 1
