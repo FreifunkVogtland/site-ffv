@@ -21,8 +21,7 @@ GLUON_SITE_PACKAGES := \
 	ffffm-ath9k-broken-wifi-workaround \
 	ffho-autoupdater-wifi-fallback \
 	iwinfo \
-	respondd-module-airtime \
-	urngd
+	respondd-module-airtime
 
 ifeq ($(GLUON_TARGET),x86-generic)
 GLUON_SITE_PACKAGES += \
