@@ -3,7 +3,7 @@ name: Build ffv firmware
 on:
   workflow_dispatch:
   push:
-    branch: [ "altima/github-actions" ]
+    branches: [ "altima/github-actions" ] #for testing
     tags:
       - b*
 
@@ -14,6 +14,7 @@ jobs:
       matrix:
         target: [ ar71xx-generic ]
     runs-on: ubuntu-latest
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Extract branch name
