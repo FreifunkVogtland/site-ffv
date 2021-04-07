@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
       - name: Checkout
         uses: actions/checkout@master
-      name: Extract branch name
+      - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
