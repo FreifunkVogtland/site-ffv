@@ -11,19 +11,20 @@ jobs:
   build_firmware:
     strategy:
       fail-fast: false
-      matrix:
-        target: [ ar71xx-generic ]
+      matrix:  
+#        target: [ar71xx-generic, ar71xx-tiny, ar71xx-nand, ath79-generic, brcm2708-bcm2708, brcm2708-bcm2709, ipq40xx-generic, ipq806x-generic, lantiq-xrx200, lantiq-xway, mpc85xx-generic, mpc85xx-p1020, ramips-mt7620, ramips-mt7621, ramips-mt76x8, ramips-rt305x, sunxi-cortexa7, x86-generic, x86-geode, x86-legacy, x86-64, ar71xx-mikrotik, brcm2708-bcm2710, mvebu-cortexa9]
+        target: [ x86-64 ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-      - name: Set tag
-        id: vars
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      #- name: Extract branch name
+      #  shell: bash
+      #  run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      #  id: extract_branch
+      #- name: Set tag
+      #  id: vars
+      #  run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Initialization environment
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -34,7 +35,7 @@ jobs:
         id: compile
         run: |
           git checkout -b patched && git checkout ${{ steps.extract_branch.outputs.branch }}
-          make BROKEN=1 GLUON_TARGETS=${{ matrix.target }} GLUON_RELEASE=${{ steps.vars.outputs.tag }} V=s
+          make BROKEN=1 GLUON_TARGETS=${{ matrix.target }} V=s
           echo "::set-output name=status::success"
       #- name: Upload firmware ${{ matrix.target }}
       #  uses: actions/upload-artifact@master
