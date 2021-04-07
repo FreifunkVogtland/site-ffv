@@ -15,7 +15,7 @@ jobs:
         target: [ ar71xx-generic ]
     runs-on: ubuntu-latest
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: Extract branch name
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
