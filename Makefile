@@ -1,12 +1,12 @@
-SITE_TAG := b20210407
-TARGET_BRANCH=experimental
-GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
-
-GLUONDIR := gluon-build
 #GLUON_GIT_URL := https://github.com/freifunk-gluon/gluon.git
-GLUON_GIT_URL := https://github.com/FreifunkVogtland/gluon.git
 #GLUON_GIT_REF := v2020.2.2
-GLUON_GIT_REF := 2020.2.2-1
+
+GLUON_GIT_URL := https://github.com/FreifunkVogtland/gluon.git
+GLUON_GIT_REF := v2020.2.2-1
+
+SITE_TAG := b20210407
+TARGET_BRANCH := experimental
+GLUONDIR := "gluon-ffv-${TARGET_BRANCH}"
 
 SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
 MANIFEST_KEY="manifest_key"
