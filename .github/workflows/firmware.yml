@@ -1,0 +1,43 @@
+name: Build ffv firmware
+
+on:
+  workflow_dispatch:
+  push:
+    branch: [ "altima/github-actions" ]
+    tags:
+      - b*
+
+jobs:
+  build_firmware:
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [ ar71xx-generic ]
+    runs-on: ubuntu-latest
+      - name: Checkout
+        uses: actions/checkout@master
+      name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: Set tag
+        id: vars
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      - name: Initialization environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo -E apt-get update
+          sudo -E apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python2.7 python3 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
+      - name: build target ${{ matrix.target }}
+        id: compile
+        run: |
+          git checkout -b patched && git checkout ${{ steps.extract_branch.outputs.branch }}
+          make BROKEN=1 GLUON_TARGETS=${{ matrix.target }} GLUON_RELEASE=${{ steps.vars.outputs.tag }} V=s
+          echo "::set-output name=status::success"
+      #- name: Upload firmware ${{ matrix.target }}
+      #  uses: actions/upload-artifact@master
+      #  if: steps.compile.outputs.status == 'success'
+      #  with:
+      #    name: ${{ matrix.target }}_output
+      #    path: ./output
