@@ -16,7 +16,6 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
     
     # set gluon env variables
-    export GLUON_OPKG_KEY="${SIGN_KEYDIR}/gluon-opkg-key"
     export GLUON_RELEASE="${SITE_TAG}"
     
     MAKEFLAGS="BROKEN=1"
