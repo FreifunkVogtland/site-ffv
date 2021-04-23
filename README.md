@@ -8,7 +8,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
 ## building images from releases
 
     # configure build specific settings
-    GLUON_VERSION="2020.2.2-1"
+    GLUON_VERSION="2020.2.3-1"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
     SITE_TAG=b20201212
@@ -16,7 +16,6 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
     
     # set gluon env variables
-    export GLUON_OPKG_KEY="${SIGN_KEYDIR}/gluon-opkg-key"
     export GLUON_RELEASE="${SITE_TAG}"
     
     MAKEFLAGS=""
