@@ -11,7 +11,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     GLUON_VERSION="2021.1-1"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
-    SITE_TAG=b20210417-exp
+    SITE_TAG=b20210612-exp
     TARGET_BRANCH=experimental
     GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
     
