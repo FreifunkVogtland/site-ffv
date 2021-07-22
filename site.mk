@@ -8,6 +8,7 @@ GLUON_FEATURES := \
 	ebtables-filter-ra-dhcp \
 	mesh-batman-adv-15 \
 	mesh-vpn-fastd \
+	mesh-vpn-fastd-l2tp \
 	radv-filterd \
 	respondd \
 	setup-mode \
