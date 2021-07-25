@@ -8,6 +8,7 @@ GLUON_FEATURES := \
 	ebtables-filter-ra-dhcp \
 	mesh-batman-adv-15 \
 	mesh-vpn-fastd \
+	mesh-vpn-fastd-l2tp \
 	radv-filterd \
 	respondd \
 	setup-mode \
@@ -19,7 +20,6 @@ GLUON_FEATURES := \
 
 GLUON_SITE_PACKAGES := \
 	ffffm-ath9k-broken-wifi-workaround \
-	ffho-autoupdater-wifi-fallback \
 	iwinfo \
 	respondd-module-airtime
 
@@ -41,6 +41,8 @@ endif
 DEFAULT_GLUON_RELEASE := b$(shell date '+%Y%m%d')-exp
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
+GLUON_AUTOUPDATER_ENABLED ?= 1
+GLUON_AUTOUPDATER_BRANCH ?= stable
 
 GLUON_PRIORITY ?= 7
 
