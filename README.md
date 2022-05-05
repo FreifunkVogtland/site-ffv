@@ -11,14 +11,14 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     GLUON_VERSION="2021.1.2-1"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
-    SITE_TAG=b20220505-exp
-    TARGET_BRANCH=experimental
+    SITE_TAG=b20220505
+    TARGET_BRANCH=stable
     GLUONDIR="gluon-ffv-${TARGET_BRANCH}"
     
     # set gluon env variables
     export GLUON_RELEASE="${SITE_TAG}"
     
-    MAKEFLAGS="BROKEN=1"
+    MAKEFLAGS=""
     
     # build
     git clone https://github.com/FreifunkVogtland/gluon.git "${GLUONDIR}" -b v"${GLUON_VERSION}"
