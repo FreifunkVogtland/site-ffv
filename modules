@@ -7,7 +7,7 @@ GLUON_SITE_FEEDS='ffffm_packages gluon_ssid_changer'
 
 
 PACKAGES_FFFFM_PACKAGES_REPO=https://github.com/FreifunkVogtland/ffffm-packages.git
-PACKAGES_FFFFM_PACKAGES_COMMIT=acbaafcfa2176947db0c1a78c905183a9a5b7618
+PACKAGES_FFFFM_PACKAGES_COMMIT=65e1bd14e74236dc17db22768a9db70418b0e175
 
 PACKAGES_GLUON_SSID_CHANGER_REPO=https://github.com/FreifunkVogtland/gluon-ssid-changer.git
 PACKAGES_GLUON_SSID_CHANGER_COMMIT=222b96a30259a03ca8ecdb173d9d326077a6efec
