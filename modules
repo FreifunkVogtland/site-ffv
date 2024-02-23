@@ -3,7 +3,7 @@
 #
 # In most cases, it is not required so don't add it.
 
-GLUON_SITE_FEEDS='ffffm_packages gluon_ssid_changer'
+GLUON_SITE_FEEDS='ffffm_packages gluon_ssid_changer batman_adv_next'
 
 
 PACKAGES_FFFFM_PACKAGES_REPO=https://github.com/FreifunkVogtland/ffffm-packages.git
@@ -11,3 +11,7 @@ PACKAGES_FFFFM_PACKAGES_COMMIT=acbaafcfa2176947db0c1a78c905183a9a5b7618
 
 PACKAGES_GLUON_SSID_CHANGER_REPO=https://github.com/FreifunkVogtland/gluon-ssid-changer.git
 PACKAGES_GLUON_SSID_CHANGER_COMMIT=222b96a30259a03ca8ecdb173d9d326077a6efec
+
+PACKAGES_BATMAN_ADV_NEXT_REPO="https://github.com/T-X/gluon-batman-adv-next.git"
+PACKAGES_BATMAN_ADV_NEXT_COMMIT="4e8a7441fd69d4aeb8847144e32c72adb3791d73"
+PACKAGES_BATMAN_ADV_NEXT_BRANCH="batman-adv-next"
