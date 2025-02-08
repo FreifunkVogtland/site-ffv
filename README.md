@@ -7,6 +7,11 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
 
 ## building images from releases
 
+    # install build-dependencies - here for bookworm build environment:
+    sudo apt install build-essential git ca-certificates gawk libncurses-dev \
+      rsync unzip wget python3 file ecdsautils python3-setuptools qemu-utils \
+      libelf-dev
+    
     # configure build specific settings
     GLUON_VERSION="2021.1.2-2"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
