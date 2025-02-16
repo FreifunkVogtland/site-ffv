@@ -13,7 +13,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
       libelf-dev
     
     # configure build specific settings
-    GLUON_VERSION="2021.1.2-2"
+    GLUON_VERSION="2021.1.2-3"
     SIGN_KEYDIR="/opt/freifunk/signkeys_ffv"
     MANIFEST_KEY="manifest_key"
     SITE_TAG=b20220506-legacy
