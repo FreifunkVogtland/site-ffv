@@ -7,10 +7,10 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
 
 ## building images from releases
 
-    # install build-dependencies - here for bookworm build environment:
+    # install build-dependencies - here for bullseye build environment:
     sudo apt install build-essential git ca-certificates gawk libncurses-dev \
       rsync unzip wget python3 file ecdsautils python3-setuptools qemu-utils \
-      libelf-dev
+      libelf-dev python2
     
     # configure build specific settings
     GLUON_VERSION="2021.1.2-3"
