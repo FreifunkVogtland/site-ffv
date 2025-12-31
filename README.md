@@ -10,7 +10,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     # install build-dependencies - here for bookworm build environment:
     sudo apt install build-essential git ca-certificates gawk libncurses-dev \
       rsync unzip wget python3 file ecdsautils python3-setuptools qemu-utils \
-      libelf-dev
+      libelf-dev swig llvm python3-pyelftools
     
     # configure build specific settings
     GLUON_VERSION="2025.1-1"
