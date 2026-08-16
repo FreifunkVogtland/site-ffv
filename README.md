@@ -30,7 +30,7 @@ Already build images can be downloaded at http://firmware.freifunk-vogtland.net/
     git clone https://github.com/FreifunkVogtland/site-ffv.git "${GLUONDIR}"/site -b "${SITE_TAG}"
     make -C "${GLUONDIR}" $MAKEFLAGS update
     for target in $(make -s -C "${GLUONDIR}" $MAKEFLAGS list-targets); do
-        make -C "${GLUONDIR}" GLUON_TARGET="${target}" $MAKEFLAGS -j"$(nproc || echo 1)"
+        make -C "${GLUONDIR}" GLUON_TARGET="${target}" $MAKEFLAGS -j"$(nproc || echo 1)" || make -C "${GLUONDIR}" GLUON_TARGET="${target}" $MAKEFLAGS V=s
     done
     
     make -C "${GLUONDIR}" $MAKEFLAGS manifest
